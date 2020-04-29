@@ -73,7 +73,7 @@
             android:id="@+id/forget_password_link"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Forget Password?"
+            android:text="Forgot Password?"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="17sp"
             android:textStyle="bold"
