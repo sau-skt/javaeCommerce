@@ -78,6 +78,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         CircleImageView profileImageView = headerView.findViewById(R.id.user_profile_image);
 
         userNameTextView.setText(Prevalent.currentOnlineUser.getName());
+        Picasso.get().load(Prevalent.currentOnlineUser.getImage()).placeholder(R.drawable.profile).into(profileImageView);
 
         recyclerView = (RecyclerView) findViewById(R.id.recycler_menu);
         recyclerView.setHasFixedSize(true);
@@ -159,9 +160,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             startActivity(intent);
             finish();
         }
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.nav_view);
-        drawer.closeDrawer(GravityCompat.START);
         return true;
     }
 }
