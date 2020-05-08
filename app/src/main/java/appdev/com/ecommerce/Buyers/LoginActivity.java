@@ -1,4 +1,4 @@
-package appdev.com.ecommerce;
+package appdev.com.ecommerce.Buyers;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,6 +23,7 @@ import com.rey.material.widget.CheckBox;
 import appdev.com.ecommerce.Admin.AdminCategoryActivity;
 import appdev.com.ecommerce.Model.Users;
 import appdev.com.ecommerce.Prevalent.Prevalent;
+import appdev.com.ecommerce.R;
 import io.paperdb.Paper;
 
 public class LoginActivity extends AppCompatActivity {
@@ -81,7 +82,7 @@ public class LoginActivity extends AppCompatActivity {
         ForgetPasswordLink.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this,ResetPasswordActivity.class);
+                Intent intent = new Intent(LoginActivity.this, ResetPasswordActivity.class);
                 intent.putExtra("check","login");
                 startActivity(intent);
             }
@@ -136,7 +137,7 @@ public class LoginActivity extends AppCompatActivity {
                                 Toast.makeText(LoginActivity.this, "Logged in successfully..", Toast.LENGTH_SHORT).show();
                                 loadingbar.dismiss();
 
-                                Intent intent = new Intent(LoginActivity.this,HomeActivity.class);
+                                Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                                 Prevalent.currentOnlineUser = usersData;
                                 startActivity(intent);
                             }

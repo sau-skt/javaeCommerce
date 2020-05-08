@@ -1,4 +1,4 @@
-package appdev.com.ecommerce;
+package appdev.com.ecommerce.Buyers;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -24,6 +24,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.HashMap;
 
 import appdev.com.ecommerce.Prevalent.Prevalent;
+import appdev.com.ecommerce.R;
 
 public class ResetPasswordActivity extends AppCompatActivity {
 
@@ -121,7 +122,7 @@ public class ResetPasswordActivity extends AppCompatActivity {
                                                             if (task.isSuccessful()){
                                                                 Toast.makeText(ResetPasswordActivity.this, "Password changed successfully.", Toast.LENGTH_SHORT).show();
 
-                                                                Intent intent = new Intent(ResetPasswordActivity.this,LoginActivity.class);
+                                                                Intent intent = new Intent(ResetPasswordActivity.this, LoginActivity.class);
                                                                 startActivity(intent);
                                                             }
                                                         }
@@ -178,7 +179,7 @@ public class ResetPasswordActivity extends AppCompatActivity {
                     if (task.isSuccessful()){
                         Toast.makeText(ResetPasswordActivity.this, "You have answered the security questions successfully", Toast.LENGTH_SHORT).show();
 
-                        Intent intent = new Intent(ResetPasswordActivity.this,HomeActivity.class);
+                        Intent intent = new Intent(ResetPasswordActivity.this, HomeActivity.class);
                         startActivity(intent);
                     }
                 }

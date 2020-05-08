@@ -1,4 +1,4 @@
-package appdev.com.ecommerce;
+package appdev.com.ecommerce.Buyers;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -28,6 +28,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import appdev.com.ecommerce.Model.Cart;
 import appdev.com.ecommerce.Prevalent.Prevalent;
+import appdev.com.ecommerce.R;
 import appdev.com.ecommerce.ViewHolder.CartViewHolder;
 
 public class CartActivity extends AppCompatActivity {
@@ -57,7 +58,7 @@ public class CartActivity extends AppCompatActivity {
             public void onClick(View v) {
                 txtTotalAmount.setText("Total Price = " +String.valueOf(overTotalPrice) + "$");
 
-                Intent intent = new Intent(CartActivity.this,ConfirmFinalOrderActivity.class);
+                Intent intent = new Intent(CartActivity.this, ConfirmFinalOrderActivity.class);
                 intent.putExtra("Total Price",String.valueOf(overTotalPrice));
                 startActivity(intent);
             }
@@ -102,7 +103,7 @@ public class CartActivity extends AppCompatActivity {
                             @Override
                             public void onClick(DialogInterface dialog, int i) {
                                 if (i == 0){
-                                    Intent intent = new Intent(CartActivity.this,ProductDetailsActivity.class);
+                                    Intent intent = new Intent(CartActivity.this, ProductDetailsActivity.class);
                                     intent.putExtra("pid",model.getPid());
                                     startActivity(intent);
                                 }
@@ -118,7 +119,7 @@ public class CartActivity extends AppCompatActivity {
                                                     if (task.isSuccessful()){
                                                         Toast.makeText(CartActivity.this, "Item removed successfully", Toast.LENGTH_SHORT).show();
 
-                                                        Intent intent = new Intent(CartActivity.this,HomeActivity.class);
+                                                        Intent intent = new Intent(CartActivity.this, HomeActivity.class);
                                                         startActivity(intent);
                                                     }
                                                 }

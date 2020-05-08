@@ -1,4 +1,4 @@
-package appdev.com.ecommerce;
+package appdev.com.ecommerce.Buyers;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,6 +20,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
 import appdev.com.ecommerce.Model.Products;
+import appdev.com.ecommerce.R;
 import appdev.com.ecommerce.ViewHolder.ProductViewHolder;
 
 public class SearchProductsActivity extends AppCompatActivity {
@@ -71,7 +72,7 @@ public class SearchProductsActivity extends AppCompatActivity {
                 holder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent intent = new Intent(SearchProductsActivity.this,ProductDetailsActivity.class);
+                        Intent intent = new Intent(SearchProductsActivity.this, ProductDetailsActivity.class);
                         intent.putExtra("pid",model.getPid());
                         startActivity(intent);
                     }

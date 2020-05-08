@@ -1,4 +1,4 @@
-package appdev.com.ecommerce;
+package appdev.com.ecommerce.Buyers;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,6 +21,7 @@ import java.util.Calendar;
 import java.util.HashMap;
 
 import appdev.com.ecommerce.Prevalent.Prevalent;
+import appdev.com.ecommerce.R;
 
 public class ConfirmFinalOrderActivity extends AppCompatActivity {
 
@@ -101,7 +102,7 @@ public class ConfirmFinalOrderActivity extends AppCompatActivity {
                             if (task.isSuccessful()){
                                 Toast.makeText(ConfirmFinalOrderActivity.this, "Your final order has been placed successfully", Toast.LENGTH_SHORT).show();
 
-                                Intent intent = new Intent(ConfirmFinalOrderActivity.this,HomeActivity.class);
+                                Intent intent = new Intent(ConfirmFinalOrderActivity.this, HomeActivity.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                 startActivity(intent);
                                 finish();

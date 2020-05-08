@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SearchProductsActivity">
+    tools:context=".Buyers.SearchProductsActivity">
 
     <RelativeLayout
         android:id="@+id/r5"
