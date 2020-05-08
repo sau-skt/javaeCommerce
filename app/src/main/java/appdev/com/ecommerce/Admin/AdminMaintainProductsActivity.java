@@ -1,4 +1,4 @@
-package appdev.com.ecommerce;
+package appdev.com.ecommerce.Admin;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,9 +22,11 @@ import com.squareup.picasso.Picasso;
 
 import java.util.HashMap;
 
+import appdev.com.ecommerce.R;
+
 public class AdminMaintainProductsActivity extends AppCompatActivity {
 
-    private Button applyChangesButton;
+    private Button applyChangesButton, deleteBtn;
     private EditText name, price, description;
     private ImageView imageView;
     private String productID = "";
@@ -43,6 +45,7 @@ public class AdminMaintainProductsActivity extends AppCompatActivity {
         price = findViewById(R.id.product_price_maintain);
         description = findViewById(R.id.product_description_maintain);
         imageView = findViewById(R.id.product_image_maintain);
+        deleteBtn = findViewById(R.id.delete_product_btn);
 
         displaySpecificProductInfo();
 
@@ -50,6 +53,28 @@ public class AdminMaintainProductsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 applyChanges();
+            }
+        });
+
+        deleteBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                deleteThisProduct();
+            }
+        });
+    }
+
+    private void deleteThisProduct() {
+        productsRef.removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if (task.isSuccessful()){
+                    Toast.makeText(AdminMaintainProductsActivity.this, "The Product is deleted successfully", Toast.LENGTH_SHORT).show();
+
+                    Intent intent = new Intent(AdminMaintainProductsActivity.this, AdminCategoryActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
             }
         });
     }

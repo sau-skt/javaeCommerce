@@ -12,7 +12,6 @@ import android.widget.TextView;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -21,16 +20,13 @@ import com.squareup.picasso.Picasso;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.core.view.GravityCompat;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import appdev.com.ecommerce.Admin.AdminMaintainProductsActivity;
 import appdev.com.ecommerce.Model.Products;
 import appdev.com.ecommerce.Prevalent.Prevalent;
 import appdev.com.ecommerce.ViewHolder.ProductViewHolder;
@@ -117,7 +113,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                     @Override
                     public void onClick(View v) {
                         if (type.equals("Admin")){
-                            Intent intent = new Intent(HomeActivity.this,AdminMaintainProductsActivity.class);
+                            Intent intent = new Intent(HomeActivity.this, AdminMaintainProductsActivity.class);
                             intent.putExtra("pid",model.getPid());
                             startActivity(intent);
                         } else {

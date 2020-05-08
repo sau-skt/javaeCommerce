@@ -1,4 +1,4 @@
-package appdev.com.ecommerce;
+package appdev.com.ecommerce.Admin;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -21,7 +21,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import appdev.com.ecommerce.Model.AdminOrders;
-import appdev.com.ecommerce.Model.Users;
+import appdev.com.ecommerce.R;
 
 public class AdminNewOrdersActivity extends AppCompatActivity {
 
@@ -64,7 +64,7 @@ public class AdminNewOrdersActivity extends AppCompatActivity {
                             @Override
                             public void onClick(View v) {
                                 String uID = getRef(position).getKey();
-                                Intent intent = new Intent(AdminNewOrdersActivity.this,AdminUserProductsActivity.class);
+                                Intent intent = new Intent(AdminNewOrdersActivity.this, AdminUserProductsActivity.class);
                                 intent.putExtra("uid",uID);
                                 startActivity(intent);
                             }

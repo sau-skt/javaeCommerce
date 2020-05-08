@@ -1,4 +1,4 @@
-package appdev.com.ecommerce;
+package appdev.com.ecommerce.Admin;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -29,6 +29,8 @@ import com.google.firebase.storage.UploadTask;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.HashMap;
+
+import appdev.com.ecommerce.R;
 
 public class AdminAddNewProductActivity extends AppCompatActivity {
 
@@ -167,7 +169,7 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()){
-                    Intent intent = new Intent(AdminAddNewProductActivity.this,AdminCategoryActivity.class);
+                    Intent intent = new Intent(AdminAddNewProductActivity.this, AdminCategoryActivity.class);
                     startActivity(intent);
 
                     loadingbar.dismiss();

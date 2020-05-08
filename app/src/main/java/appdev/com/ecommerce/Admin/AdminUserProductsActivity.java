@@ -1,4 +1,4 @@
-package appdev.com.ecommerce;
+package appdev.com.ecommerce.Admin;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,6 +18,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import appdev.com.ecommerce.Model.Cart;
 import appdev.com.ecommerce.Model.Products;
 import appdev.com.ecommerce.Prevalent.Prevalent;
+import appdev.com.ecommerce.R;
 import appdev.com.ecommerce.ViewHolder.CartViewHolder;
 
 public class AdminUserProductsActivity extends AppCompatActivity {

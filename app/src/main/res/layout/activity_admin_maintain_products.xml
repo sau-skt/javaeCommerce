@@ -4,10 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".AdminMaintainProductsActivity"
+    tools:context=".Admin.AdminMaintainProductsActivity"
     android:layout_marginTop="20dp"
     android:layout_marginStart="15dp"
     android:layout_marginEnd="15dp"
+    android:layout_marginBottom="5dp"
     app:cardElevation="15dp">
 
     <RelativeLayout
@@ -73,6 +74,19 @@
             android:textSize="18sp"
             android:padding="12dp"
             android:layout_margin="5dp"
+            android:background="@drawable/buttons"
+            android:textColor="@android:color/white"/>
+
+        <Button
+            android:id="@+id/delete_product_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/apply_changes_btn"
+            android:text="Delete This Product"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:padding="12dp"
+            android:layout_margin="30dp"
             android:background="@drawable/buttons"
             android:textColor="@android:color/white"/>
 

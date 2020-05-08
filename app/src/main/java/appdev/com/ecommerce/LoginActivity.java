@@ -20,6 +20,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.rey.material.widget.CheckBox;
 
+import appdev.com.ecommerce.Admin.AdminCategoryActivity;
 import appdev.com.ecommerce.Model.Users;
 import appdev.com.ecommerce.Prevalent.Prevalent;
 import io.paperdb.Paper;
@@ -29,7 +30,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText InputNumber, InputPassword;
     private Button LoginButton;
     private ProgressDialog loadingbar;
-    private TextView AdminLink, NotAdminLink;
+    private TextView AdminLink, NotAdminLink, ForgetPasswordLink;
 
     private String parentDbname = "Users";
     private CheckBox chkBoxRememberMe;
@@ -45,6 +46,7 @@ public class LoginActivity extends AppCompatActivity {
         loadingbar = new ProgressDialog(this);
         AdminLink = (TextView) findViewById(R.id.admin_panel_link);
         NotAdminLink = (TextView) findViewById(R.id.not_admin_panel_link);
+        ForgetPasswordLink = (TextView) findViewById(R.id.forget_password_link);
 
         chkBoxRememberMe = (CheckBox) findViewById(R.id.remember_me_chkb);
         Paper.init(this);
@@ -73,6 +75,15 @@ public class LoginActivity extends AppCompatActivity {
                 AdminLink.setVisibility(View.VISIBLE);
                 NotAdminLink.setVisibility(View.INVISIBLE);
                 parentDbname = "Users";
+            }
+        });
+
+        ForgetPasswordLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this,ResetPasswordActivity.class);
+                intent.putExtra("check","login");
+                startActivity(intent);
             }
         });
     }
@@ -118,7 +129,7 @@ public class LoginActivity extends AppCompatActivity {
                                 Toast.makeText(LoginActivity.this, "Welcome Admin Logged in successfully..", Toast.LENGTH_SHORT).show();
                                 loadingbar.dismiss();
 
-                                Intent intent = new Intent(LoginActivity.this,AdminCategoryActivity.class);
+                                Intent intent = new Intent(LoginActivity.this, AdminCategoryActivity.class);
                                 startActivity(intent);
                             }
                             else if (parentDbname.equals("Users")) {
