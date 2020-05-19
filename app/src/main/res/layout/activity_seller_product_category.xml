@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Admin.AdminCategoryActivity">
+    tools:context=".Sellers.SellerProductCategoryActivity">
 
     <TextView
         android:id="@+id/slogan_category"
@@ -25,7 +25,7 @@
         android:orientation="horizontal"
         android:layout_centerHorizontal="true"
         android:gravity="center"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="100dp"
         android:layout_below="@+id/slogan_category">
 
         <ImageView
@@ -125,47 +125,5 @@
             android:src="@drawable/mobiles"/>
 
     </LinearLayout>
-
-    <Button
-        android:id="@+id/maintain_btn"
-        android:layout_width="match_parent"
-        android:layout_height="42dp"
-        android:layout_above="@+id/check_orders_btn"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="10dp"
-        android:background="@color/colorPrimaryDark"
-        android:text="Maintain Products"
-        android:textColor="@android:color/white"
-        android:textSize="20sp"
-        android:textAllCaps="false"/>
-
-    <Button
-        android:id="@+id/check_orders_btn"
-        android:layout_width="match_parent"
-        android:layout_height="42dp"
-        android:layout_above="@+id/admin_logout_btn"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="10dp"
-        android:background="@color/colorPrimaryDark"
-        android:text="Check New Orders"
-        android:textColor="@android:color/white"
-        android:textSize="20sp"
-        android:textAllCaps="false"/>
-
-    <Button
-        android:id="@+id/admin_logout_btn"
-        android:layout_width="match_parent"
-        android:layout_height="42dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="15dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:background="@color/colorPrimaryDark"
-        android:text="Logout"
-        android:textColor="@android:color/white"
-        android:textSize="20sp"
-        android:textAllCaps="false"/>
 
 </RelativeLayout>

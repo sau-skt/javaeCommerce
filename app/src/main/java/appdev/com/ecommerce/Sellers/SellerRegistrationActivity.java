@@ -20,6 +20,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
 
+import appdev.com.ecommerce.Buyers.MainActivity;
 import appdev.com.ecommerce.R;
 
 public class SellerRegistrationActivity extends AppCompatActivity {
@@ -68,7 +69,7 @@ public class SellerRegistrationActivity extends AppCompatActivity {
         String password = passwordInput.getText().toString();
         final String address = addressInput.getText().toString();
 
-        if (!name.equals("") && !phone.equals("") && !email.equals("") && password.equals("") && address.equals("")){
+        if (!name.equals("") && !phone.equals("") && !email.equals("") && !password.equals("") && !address.equals("")){
 
             loadingbar.setTitle("Creating Seller Account");
             loadingbar.setMessage("Please wait while we are checking the credentials..");
@@ -98,6 +99,11 @@ public class SellerRegistrationActivity extends AppCompatActivity {
                                             public void onComplete(@NonNull Task<Void> task) {
                                                 Toast.makeText(SellerRegistrationActivity.this, "You are registered successfully", Toast.LENGTH_SHORT).show();
                                                 loadingbar.dismiss();
+
+                                                Intent intent = new Intent(SellerRegistrationActivity.this, SellerHomeActivity.class);
+                                                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                                startActivity(intent);
+                                                finish();
                                             }
                                         });
                             }

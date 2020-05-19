@@ -20,7 +20,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.rey.material.widget.CheckBox;
 
-import appdev.com.ecommerce.Admin.AdminCategoryActivity;
+import appdev.com.ecommerce.Admin.AdminHomeActivity;
+import appdev.com.ecommerce.Sellers.SellerProductCategoryActivity;
 import appdev.com.ecommerce.Model.Users;
 import appdev.com.ecommerce.Prevalent.Prevalent;
 import appdev.com.ecommerce.R;
@@ -130,7 +131,7 @@ public class LoginActivity extends AppCompatActivity {
                                 Toast.makeText(LoginActivity.this, "Welcome Admin Logged in successfully..", Toast.LENGTH_SHORT).show();
                                 loadingbar.dismiss();
 
-                                Intent intent = new Intent(LoginActivity.this, AdminCategoryActivity.class);
+                                Intent intent = new Intent(LoginActivity.this, AdminHomeActivity.class);
                                 startActivity(intent);
                             }
                             else if (parentDbname.equals("Users")) {

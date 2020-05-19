@@ -23,6 +23,7 @@ import com.squareup.picasso.Picasso;
 import java.util.HashMap;
 
 import appdev.com.ecommerce.R;
+import appdev.com.ecommerce.Sellers.SellerProductCategoryActivity;
 
 public class AdminMaintainProductsActivity extends AppCompatActivity {
 
@@ -71,7 +72,7 @@ public class AdminMaintainProductsActivity extends AppCompatActivity {
                 if (task.isSuccessful()){
                     Toast.makeText(AdminMaintainProductsActivity.this, "The Product is deleted successfully", Toast.LENGTH_SHORT).show();
 
-                    Intent intent = new Intent(AdminMaintainProductsActivity.this, AdminCategoryActivity.class);
+                    Intent intent = new Intent(AdminMaintainProductsActivity.this, SellerProductCategoryActivity.class);
                     startActivity(intent);
                     finish();
                 }
@@ -103,7 +104,7 @@ public class AdminMaintainProductsActivity extends AppCompatActivity {
                     if (task.isSuccessful()){
                         Toast.makeText(AdminMaintainProductsActivity.this, "Changes applied successfully", Toast.LENGTH_SHORT).show();
 
-                        Intent intent = new Intent(AdminMaintainProductsActivity.this,AdminCategoryActivity.class);
+                        Intent intent = new Intent(AdminMaintainProductsActivity.this, SellerProductCategoryActivity.class);
                         startActivity(intent);
                         finish();
                     }
